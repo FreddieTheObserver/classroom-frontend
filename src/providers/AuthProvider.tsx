@@ -30,7 +30,7 @@ async function fetchMe(): Promise<AuthUser | null> {
     }
 }
 
-export async function AuthProvider({ children }: { children: ReactNode }) {
+export function AuthProvider({ children }: { children: ReactNode }) {
     const { data, isLoading } = useQuery({
         queryKey: ["me"],
         queryFn: fetchMe,
