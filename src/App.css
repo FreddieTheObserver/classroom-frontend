@@ -3,29 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50 antialiased;
-    font-family: var(--font-sans);
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@import "tailwindcss";
-
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --background: oklch(0.9730 0.0133 286.1503);
   --foreground: oklch(0.3015 0.0572 282.4176);
@@ -189,7 +166,8 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 antialiased;
+    font-family: var(--font-sans);
   }
   body {
     @apply bg-background text-foreground;
