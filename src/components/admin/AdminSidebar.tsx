@@ -26,9 +26,8 @@ export function AdminSidebar() {
                             "hover:bg-muted",
                             isActive && "bg-primary text-primary-foreground hover:bg-primary/90",
                         )}>
-                            <item.icon className="size-4">
-                                {item.label}
-                            </item.icon>
+                        <item.icon className="size-4" />
+                        <span>{item.label}</span>
                     </NavLink>
                 ))}
             </nav>

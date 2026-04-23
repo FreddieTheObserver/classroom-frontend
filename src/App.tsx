@@ -3,7 +3,10 @@ import { useAuth } from "./providers/AuthProvider";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { LoginPage } from "./pages/LoginPage";
 import { SignupPage } from "./pages/SignupPage";
-import { AdminDashboard } from "./pages/AdminDashboard";
+import { AdminLayout } from "./layouts/AdminLayout";
+import { AdminOverview } from "./pages/admin/AdminOverview";
+import { DepartmentsPage } from "./pages/admin/DepartmentsPage";
+import { SubjectsPage } from "./pages/admin/SubjectsPage";
 import { TeacherDashboard } from "./pages/TeacherDashboard";
 import { StudentDashboard } from "./pages/StudentDashboard";
 
@@ -26,7 +29,11 @@ export function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route element={<ProtectedRoute role="ADMIN" />}>
-                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/admin" element={<AdminLayout />}>
+                    <Route index element={<AdminOverview />} />
+                    <Route path="departments" element={<DepartmentsPage />} />
+                    <Route path="subjects" element={<SubjectsPage />} />
+                </Route>
             </Route>
             <Route element={<ProtectedRoute role="TEACHER" />}>
                 <Route path="/teacher" element={<TeacherDashboard />} />
