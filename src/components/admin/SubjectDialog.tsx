@@ -1,12 +1,12 @@
-import { useEffect } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { useEffect } from "react";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
     Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle,
-} from '@/components/ui/dialog';
+} from "@/components/ui/dialog";
 import {
     Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -79,8 +79,7 @@ export function SubjectDialog({ open, onOpenChange, mode, subject }: Props) {
                         You need at least one department before adding subjects.
                         Create a department first.
                         <div className="mt-4">
-                            <Button variant="outline" onClick={() =>
-                            onOpenChange(false)}>Close</Button>
+                            <Button variant="outline" onClick={() => onOpenChange(false)}>Close</Button>
                         </div>
                     </div>
                 ) : (
@@ -98,7 +97,7 @@ export function SubjectDialog({ open, onOpenChange, mode, subject }: Props) {
                                     onChange: (e) => { e.target.value = e.target.value.toUpperCase(); },
                                 })}
                                 disabled={busy}
-                                placeholder="CS101"
+                                placeholder="CSC101"
                             />
                             {errors.code && <p className="text-sm text-destructive">{errors.code.message}</p>}
                         </div>

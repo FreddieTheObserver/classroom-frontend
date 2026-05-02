@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { toast } from 'sonner';
-import { subjectsApi, ApiError } from "@/lib/api.ts";
+import { toast } from "sonner";
+import { subjectsApi, ApiError } from "@/lib/api";
 
 function key(filter?: { departmentId?: string }) {
     return ["subjects", filter?.departmentId ?? "all"] as const;
